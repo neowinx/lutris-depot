@@ -3,14 +3,19 @@ game_slug: they-are-billions
 version: Steam
 slug: they-are-billions-steam
 runner: winesteam
-winesteam:
-  version: staging-3.14-x86_64
+
 script:
   game:
     appid: 644930
+    arch: win32
+    prefix: $GAMEDIR/prefix
   installer:
   - task:
       name: winetricks
       description: Installing .Net 4.6.x (Required by the game)
       app: dotnet462
+      arch: win32
+      prefix: $GAMEDIR/prefix
       silent: false
+  winesteam:
+    version: staging-3.14-x86_64
