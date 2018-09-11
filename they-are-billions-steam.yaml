@@ -3,7 +3,8 @@ game_slug: they-are-billions
 version: Steam
 slug: they-are-billions-steam
 runner: winesteam
-
+description: They Are Billions is a Steampunk strategy game set on a post-apocalyptic planet. Build and defend colonies to survive against the billions of the infected that seek to annihilate the few remaining living humans. Can humanity survive after the zombie apocalypse?
+notes: This game's engine requires wine >= 3.14 and the latest .Net to run. Ensure staging-3.14-x86_64 is installed in your wine runners
 script:
   game:
     appid: 644930
@@ -19,3 +20,4 @@ script:
       silent: false
   winesteam:
     version: staging-3.14-x86_64
+    quit_steam_on_exit: false
