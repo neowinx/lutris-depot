@@ -12,12 +12,16 @@ script:
     prefix: $GAMEDIR/prefix
   installer:
   - task:
+      name: create_prefix
+      arch: win32
+      prefix: $GAMEDIR/prefix
+  - task:
       name: winetricks
       description: Installing .Net 4.6.x (Required by the game)
       app: dotnet462
+      silent: false
       arch: win32
       prefix: $GAMEDIR/prefix
-      silent: false
   winesteam:
     version: staging-3.14-x86_64
     quit_steam_on_exit: false
