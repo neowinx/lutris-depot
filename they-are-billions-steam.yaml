@@ -10,6 +10,10 @@ script:
     appid: 644930
     arch: win32
     prefix: $GAMEDIR/prefix
+  require-binaries: xterm, wine
+  system:
+    env:
+      TERM: xterm
   installer:
   - task:
       name: create_prefix
