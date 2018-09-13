@@ -4,12 +4,34 @@ version: Steam
 slug: they-are-billions-steam
 runner: winesteam
 description: They Are Billions is a Steampunk strategy game set on a post-apocalyptic planet. Build and defend colonies to survive against the billions of the infected that seek to annihilate the few remaining living humans. Can humanity survive after the zombie apocalypse?
-notes: This game's engine requires wine >= 3.14 and the latest .Net to run. Ensure staging-3.14-x86_64 is installed in your wine runners
+notes: |
+  This game's engine requires wine >= 3.14 and the latest .Net
+  
+  NOTE: During your first install Steam probably will not be able to connect to the Content Servers and download the game
+
+    To solve that:
+
+      1 - Close the installer
+      
+      2 - Go to Steam config directory inside the prefix created by the winesteam runner (usually $HOME/.local/share/lutris/runners/winesteam/prefix64/drive_c/Program\ Files\ \(x86\)/Steam/config/)
+
+      3 - Download a valid config.vdf like this:
+        
+            curl -sL https://gist.githubusercontent.com/neowinx/1a03ee15bd7fb8d3f56ced965a4499eb/raw/eafc058a34d7026bf8606551722d2bb0bc1c2fe7/config.vdf > config.vdf
+
+      4 - Run the installer again
+    
+    Refer to https://bugs.winehq.org/show_bug.cgi?id=45329 for more information
+
+# find ~/.local/share/lutris/runners/winesteam/ -name config.vdf -exec mv {} /tmp \;
+# sed -i "/cip/a 				\"CS\"		\"valve168.steamcontent.com;valve1103.steamcontent.com;valve1100.steamcontent.com;valve1102.steamcontent.com;valve1101.steamcontent.com;valve715.steamcontent.com;valve705.steamcontent.com;valve722.steamcontent.com;valve703.steamcontent.com;valve716.steamcontent.com;valve709.steamcontent.com;valve704.steamcontent.com;valve720.steamcontent.com;valve714.steamcontent.com;valve710.steamcontent.com;valve717.steamcontent.com;valve712.steamcontent.com;valve707.steamcontent.com;valve719.steamcontent.com;valve702.steamcontent.com;valve701.steamcontent.com;valve708.steamcontent.com;valve706.steamcontent.com;valve718.steamcontent.com;valve721.steamcontent.com;valve711.steamcontent.com;valve805.steamcontent.com;valve809.steamcontent.com;valve800.steamcontent.com;valve700.steamcontent.com;valve808.steamcontent.com;valve807.steamcontent.com;valve802.steamcontent.com;valve803.steamcontent.com;valve806.steamcontent.com;valve804.steamcontent.com;valve801.steamcontent.com;valve1701.steamcontent.com;valve713.steamcontent.com;valve1700.steamcontent.com;valve320.steamcontent.com;valve609.steamcontent.com;valve303.steamcontent.com;valve327.steamcontent.com;valve314.steamcontent.com;valve304.steamcontent.com;valve302.steamcontent.com;valve308.steamcontent.com;valve306.steamcontent.com;valve311.steamcontent.com;valve321.steamcontent.com;valve326.steamcontent.com;valve310.steamcontent.com;valve312.steamcontent.com;valve315.steamcontent.com;valve613.steamcontent.com;valve316.steamcontent.com;valve322.steamcontent.com;valve313.steamcontent.com;valve319.steamcontent.com;valve318.steamcontent.com;valve601.steamcontent.com;valve605.steamcontent.com;valve617.steamcontent.com;valve610.steamcontent.com;valve615.steamcontent.com;valve603.steamcontent.com;valve317.steamcontent.com;valve602.steamcontent.com;valve324.steamcontent.com;valve2305.steamcontent.com;valve618.steamcontent.com;valve606.steamcontent.com;valve607.steamcontent.com;valve325.steamcontent.com;valve305.steamcontent.com;valve612.steamcontent.com;valve611.steamcontent.com;valve604.steamcontent.com;valve616.steamcontent.com;valve307.steamcontent.com;valve2306.steamcontent.com;valve2307.steamcontent.com;valve1801.steamcontent.com;valve323.steamcontent.com;valve309.steamcontent.com;valve301.steamcontent.com;valve2308.steamcontent.com;valve2302.steamcontent.com;valve2303.steamcontent.com;valve300.steamcontent.com;valve2309.steamcontent.com;valve2304.steamcontent.com;valve2300.steamcontent.com;valve2301.steamcontent.com;valve1800.steamcontent.com;valve600.steamcontent.com;videoorigin1-sea1.steamcontent.com;videoorigin2-sea1.steamcontent.com;valve1499.steamcontent.com\"" $WINESTEAM/config/config.vdf
+# find `find $HOME -name 'lutris'` -name config.vdf -exec sed -i "/cip/a 				\"CS\"\"valve168.steamcontent.com;valve1103.steamcontent.com;valve1100.steamcontent.com;valve1102.steamcontent.com;valve1101.steamcontent.com;valve715.steamcontent.com;valve705.steamcontent.com;valve722.steamcontent.com;valve703.steamcontent.com;valve716.steamcontent.com;valve709.steamcontent.com;valve704.steamcontent.com;valve720.steamcontent.com;valve714.steamcontent.com;valve710.steamcontent.com;valve717.steamcontent.com;valve712.steamcontent.com;valve707.steamcontent.com;valve719.steamcontent.com;valve702.steamcontent.com;valve701.steamcontent.com;valve708.steamcontent.com;valve706.steamcontent.com;valve718.steamcontent.com;valve721.steamcontent.com;valve711.steamcontent.com;valve805.steamcontent.com;valve809.steamcontent.com;valve800.steamcontent.com;valve700.steamcontent.com;valve808.steamcontent.com;valve807.steamcontent.com;valve802.steamcontent.com;valve803.steamcontent.com;valve806.steamcontent.com;valve804.steamcontent.com;valve801.steamcontent.com;valve1701.steamcontent.com;valve713.steamcontent.com;valve1700.steamcontent.com;valve320.steamcontent.com;valve609.steamcontent.com;valve303.steamcontent.com;valve327.steamcontent.com;valve314.steamcontent.com;valve304.steamcontent.com;valve302.steamcontent.com;valve308.steamcontent.com;valve306.steamcontent.com;valve311.steamcontent.com;valve321.steamcontent.com;valve326.steamcontent.com;valve310.steamcontent.com;valve312.steamcontent.com;valve315.steamcontent.com;valve613.steamcontent.com;valve316.steamcontent.com;valve322.steamcontent.com;valve313.steamcontent.com;valve319.steamcontent.com;valve318.steamcontent.com;valve601.steamcontent.com;valve605.steamcontent.com;valve617.steamcontent.com;valve610.steamcontent.com;valve615.steamcontent.com;valve603.steamcontent.com;valve317.steamcontent.com;valve602.steamcontent.com;valve324.steamcontent.com;valve2305.steamcontent.com;valve618.steamcontent.com;valve606.steamcontent.com;valve607.steamcontent.com;valve325.steamcontent.com;valve305.steamcontent.com;valve612.steamcontent.com;valve611.steamcontent.com;valve604.steamcontent.com;valve616.steamcontent.com;valve307.steamcontent.com;valve2306.steamcontent.com;valve2307.steamcontent.com;valve1801.steamcontent.com;valve323.steamcontent.com;valve309.steamcontent.com;valve301.steamcontent.com;valve2308.steamcontent.com;valve2302.steamcontent.com;valve2303.steamcontent.com;valve300.steamcontent.com;valve2309.steamcontent.com;valve2304.steamcontent.com;valve2300.steamcontent.com;valve2301.steamcontent.com;valve1800.steamcontent.com;valve600.steamcontent.com;videoorigin1-sea1.steamcontent.com;videoorigin2-sea1.steamcontent.com;valve1499.steamcontent.com\"" {} \;
+
 script:
   game:
     appid: 644930
     arch: win32
-  require-binaries: wine, xterm
+  require-binaries: wine, curl, xterm
   installer:
   - task:
       name: winetricks
