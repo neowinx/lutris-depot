@@ -9,7 +9,7 @@ to test an installer, just type something like:
 $ lutris -i YOUR_INSTALLER_NAME.yaml
 ```
 
-replacing the somewhat obvious YOUR_INSTALLER_NAME.yaml with the name of the yaml of to the installer you want to try
+replacing the somewhat obvious `YOUR_INSTALLER_NAME.yaml` with the name of the yaml of to the installer you want to try
 
 ## Troubleshooting
 
