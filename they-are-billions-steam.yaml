@@ -31,14 +31,16 @@ script:
   game:
     appid: 644930
     arch: win32
+    prefix: $GAMEDIR/prefix
   require-binaries: wine, curl, xterm
   installer:
   - task:
       name: winetricks
       description: Installing .Net 4.6.x (Required by the game)
       app: dotnet462
-      #silent: false
+      silent: false
       arch: win32
+      prefix: $GAMEDIR/prefix
   winesteam:
     version: staging-3.14-x86_64
     quit_steam_on_exit: false
