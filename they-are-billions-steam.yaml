@@ -11,7 +11,7 @@ notes: |
 
     To solve that:
 
-      1 - Close the installer
+      1 - Close the installer AND Steam
       
       2 - Go to Steam config directory inside the prefix created by the winesteam runner (usually $HOME/.local/share/lutris/runners/winesteam/prefix64/drive_c/Program\ Files\ \(x86\)/Steam/config/)
 
@@ -37,7 +37,7 @@ script:
       name: winetricks
       description: Installing .Net 4.6.x (Required by the game)
       app: dotnet462
-      silent: false
+      #silent: false
       arch: win32
   winesteam:
     version: staging-3.14-x86_64
