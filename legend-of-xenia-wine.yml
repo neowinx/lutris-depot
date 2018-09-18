@@ -1,16 +1,12 @@
 name: Legend of Xenia
 game_slug: legend-of-xenia
-version: Wine
+version: wine
 slug: legend-of-xenia-wine
 runner: wine
+
 script:
-  files:
-  - LegendOfXenia: "N/A:Select the game's exe"
   game:
-    arch: win32
-    exe: $GAMEDIR/prefix/$LegendOfXenia
+    exe: thegame
     prefix: $GAMEDIR/prefix
-  installer:
-  - merge:
-    src: $LegendOfXenia
-    dst: $GAMEDIR/prefix
+  files:
+  - thegame: "N/A:Select the game's exe"
