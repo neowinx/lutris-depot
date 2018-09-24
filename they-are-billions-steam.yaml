@@ -33,21 +33,21 @@ script:
     arch: win32
     prefix: $GAMEDIR/prefix
   files:
-  - configvdf: https://gist.githubusercontent.com/neowinx/1a03ee15bd7fb8d3f56ced965a4499eb/raw/eafc058a34d7026bf8606551722d2bb0bc1c2fe7/config.vdf
+#  - configvdf: https://gist.githubusercontent.com/neowinx/1a03ee15bd7fb8d3f56ced965a4499eb/raw/eafc058a34d7026bf8606551722d2bb0bc1c2fe7/config.vdf
   - slimdxruntime: $WINESTEAM:644930:SlimDXRuntime.msi
   require-binaries: wine, curl, xterm
   installer:
-  - task:
-      name: winetricks
-      app: win7
-      description: 'winetricks: win7'
-      arch: win32
-      prefix: $GAMEDIR/prefix
-  - task:
-      name: winetricks
-      app: vcrun2017 dotnet40 gdiplus
-      arch: win32
-      prefix: $GAMEDIR/prefix
+#  - task:
+#      name: winetricks
+#      app: win7
+#      description: 'winetricks: win7'
+#      arch: win32
+#      prefix: $GAMEDIR/prefix
+#  - task:
+#      name: winetricks
+#      app: vcrun2017 dotnet40 gdiplus
+#      arch: win32
+#      prefix: $GAMEDIR/prefix
 #  - task:
 #      name: winetricks
 #      app: win81
@@ -58,11 +58,11 @@ script:
       app: dotnet462
       arch: win32
       prefix: $GAMEDIR/prefix
-  - task:
-      name: wineexec
-      executable: slimdxruntime
-      arch: win32
-      prefix: $GAMEDIR/prefix
+#  - task:
+#      name: wineexec
+#      executable: slimdxruntime
+#      arch: win32
+#      prefix: $GAMEDIR/prefix
   winesteam:
-    version: staging-3.14-x86_64
-    quit_steam_on_exit: false
+    version: 3.14-x86_64
+#    quit_steam_on_exit: false
